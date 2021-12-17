@@ -1,6 +1,6 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
+//a
 public class MapData {
     public static final int TYPE_SPACE = 0;
     public static final int TYPE_WALL = 1;
