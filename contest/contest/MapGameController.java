@@ -11,7 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.Group;
 import javafx.scene.layout.Pane;
-
+//comment
 public class MapGameController implements Initializable {
     public MapData mapData;
     public MoveChara chara;
