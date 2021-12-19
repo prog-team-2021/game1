@@ -135,3 +135,4 @@ public class MoveChara {
         }
     }
 }
+// ubuntu共有テスト
