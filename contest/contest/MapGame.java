@@ -21,3 +21,4 @@ public class MapGame extends Application {
         launch(args);
     }
 }
+//test
