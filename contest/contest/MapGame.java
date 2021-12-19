@@ -22,4 +22,10 @@ public class MapGame extends Application {
     }
 }
 
+<<<<<<< HEAD
 //統合テスト 開発→master
+=======
+
+
+//統合テスト: 追加機能/デバッグ→開発
+>>>>>>> 追加機能/デバッグブランチ
