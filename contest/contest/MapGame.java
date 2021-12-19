@@ -21,8 +21,7 @@ public class MapGame extends Application {
         launch(args);
     }
 }
-<<<<<<< HEAD
-//master :提出用branch
-=======
-//release
->>>>>>> release
+
+
+
+//統合テスト: 追加機能/デバッグ→開発
