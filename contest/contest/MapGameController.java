@@ -105,3 +105,4 @@ public class MapGameController implements Initializable {
     }
 
 }
+//必須1
