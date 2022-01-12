@@ -22,6 +22,7 @@ public class MapGameController implements Initializable {
     public MapData mapData;
     public MoveChara chara;
     public GridPane mapGrid;
+    public Label score;
     public ImageView[] mapImageViews;
 
     @Override
@@ -60,20 +61,21 @@ public class MapGameController implements Initializable {
         }
 
     }
+
     //
     
-            //得点表示と制限時間表示とステージ数表示
-        Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
+    //得点表示と制限時間表示とステージ数表示
+    Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
 
-        public void paintComponent(Graphics g) {
-		//super.paintComponent(g);
-		g.setColor(Color.black);
+    public void paintComponent(Graphics g) {
+	//super.paintComponent(g);
+	g.setColor(Color.black);
 		Font font = new Font(Font.SERIF, Font.BOLD, 10);
 		g.setFont(font);
 		g.drawString("score", 10, 10);
         g.drawString("time", 10, 20);
         g.drawString("stage", 10, 30);
-	    }
+	}
     
     // Get users key actions
     public void keyAction(KeyEvent event){
