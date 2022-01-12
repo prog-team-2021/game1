@@ -108,7 +108,7 @@ public class MapData {
     Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
 
     public void paintComponent(Graphics g) {
-		super.paintComponent(g);
+		//super.paintComponent(g);
 		g.setColor(Color.black);
 		Font font = new Font(Font.SERIF, Font.BOLD, 10);
 		g.setFont(font);
