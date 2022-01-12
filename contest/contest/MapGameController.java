@@ -42,7 +42,9 @@ public class MapGameController implements Initializable {
     }
 
     //ステータス
- 
+    int scorecount=0;
+    int timecount=0;
+    int stagecount=0;
 
     // Draw the map
     public void drawMap(MoveChara c, MapData m){
