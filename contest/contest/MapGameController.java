@@ -11,6 +11,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.Group;
 import javafx.scene.layout.Pane;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.util.concurrent.*;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 //comment
 public class MapGameController implements Initializable {
     public MapData mapData;
@@ -32,6 +38,11 @@ public class MapGameController implements Initializable {
         drawMap(chara, mapData);
     }
 
+    //ステータス
+    int score=0;
+    //int counttime=120;
+    int stage = 0;
+
     // Draw the map
     public void drawMap(MoveChara c, MapData m){
         int cx = c.getPosX();
@@ -47,6 +58,19 @@ public class MapGameController implements Initializable {
                 }
             }
         }
+        //得点表示と制限時間表示とステージ数表示
+        Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
+
+        public void paintComponent(Graphics g) {
+		//super.paintComponent(g);
+		g.setColor(Color.black);
+		Font font = new Font(Font.SERIF, Font.BOLD, 10);
+		g.setFont(font);
+		g.drawString("score", 10, 10);
+        g.drawString("time", 10, 20);
+        g.drawString("stage", 10, 30);
+	    }
+    }
     }
 
     // Get users key actions
@@ -102,6 +126,29 @@ public class MapGameController implements Initializable {
     // Print actions of user inputs
     public void printAction(String actionString) {
         System.out.println("Action: " + actionString);
+    }
+
+    
+    //制限時間
+    public class Countdown {
+        public static void main(String[] args) {
+    
+            final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    
+            final Runnable runnable = new Runnable() {
+    
+                public void run() {
+                    int counttime=120;
+                    counttime--;
+    
+                    if (counttime < 0) {
+                        System.out.println("Timer Over!");
+                        scheduler.shutdown();
+                    }
+                }
+            };
+            scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
+        }
     }
 
 }

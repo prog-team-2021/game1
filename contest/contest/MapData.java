@@ -20,6 +20,7 @@ public class MapData {
     private int width;
     private int height;
 
+
     MapData(int x, int y){
         mapImages = new Image[2];
         mapImageViews = new ImageView[y][x];
@@ -34,6 +35,7 @@ public class MapData {
         fillMap(MapData.TYPE_WALL);
         digMap(1, 3);
         setImageViews();
+        
     }
 
     public int getHeight(){
