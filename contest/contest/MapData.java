@@ -81,22 +81,22 @@ public class MapData {
         setMap(x, y, MapData.TYPE_SPACE);
         int[][] dl = {{0,1},{0,-1},{-1,0},{1,0}};
         int[] tmp;
-
-        for (int i=0; i<dl.length; i++) {
-            int r = (int)(Math.random()*dl.length);
+    // dlのシャッフル
+        for (int i=0; i<dl.length; i++) {   //dl.length = 4
+            int r = (int)(Math.random()*dl.length);  //range 0~3
             tmp = dl[i];
             dl[i] = dl[r];
             dl[r] = tmp;
         }
 
         for (int i=0; i<dl.length; i++){
-            int dx = dl[i][0];
+            int dx = dl[i][0];             //dx*2,dy*2 range -2~2
             int dy = dl[i][1];
             if (getMap(x+dx*2, y+dy*2) == MapData.TYPE_WALL){
                 setMap(x+dx, y+dy, MapData.TYPE_SPACE);
                 digMap(x+dx*2, y+dy*2);
 
-            }
+            }                             //一度止まるまで線を引く。その後先端から広がっていき根元まで処理が戻ってくる。 
         }
     }
 }
