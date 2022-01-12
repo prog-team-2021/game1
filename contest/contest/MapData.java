@@ -116,4 +116,5 @@ public class MapData {
         g.drawString("time", 10, 20);
         g.drawString("stage", 10, 30);
 	}
+}
 // branch test
