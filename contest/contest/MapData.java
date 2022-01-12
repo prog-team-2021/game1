@@ -1,5 +1,11 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+ 
+import com.nompor.gtk.GameView;
+import com.nompor.gtk.draw.GraphicsUtil;
 //a
 public class MapData {
     public static final int TYPE_SPACE = 0;
