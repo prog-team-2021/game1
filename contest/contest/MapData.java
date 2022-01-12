@@ -107,6 +107,11 @@ public class MapData {
     }
 
     //得点表示と制限時間表示とステージ数表示
+    Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
+
+    public void draw(Graphics g) {
+    GraphicsUtil.setTextAntialiasing(g, true);
+
     g.setColor(Color.BLACK);
     g.fillRect(0, 0, width, 50);
 
@@ -116,6 +121,6 @@ public class MapData {
     GraphicsUtil.drawCenteringString(g, "Score:");
     GraphicsUtil.drawCenteringString(g, "Point:");
     GraphicsUtil.drawCenteringString(g, "Stage:");
-
+    }
 }
 // branch test
