@@ -1,7 +1,6 @@
+import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Rectangle;
-import javafx.animation.AnimationTimer;
 
 public class MoveChara {
     public static final int TYPE_DOWN  = 0;

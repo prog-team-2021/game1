@@ -1,22 +1,19 @@
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.KeyCode;
-import javafx.scene.Group;
-import javafx.scene.layout.Pane;
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.concurrent.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
+import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
 //comment
 public class MapGameController implements Initializable {
     public MapData mapData;
