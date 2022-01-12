@@ -1,10 +1,6 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
 
-//a//
 public class MapData {
     public static final int TYPE_SPACE = 0;
     public static final int TYPE_WALL = 1;
@@ -12,6 +8,10 @@ public class MapData {
     private static final String mapImageFiles[] = {
         "png/SPACE.png",
         "png/WALL.png"
+        "png/key.png"
+        "png/gate.png"
+        "png/switch.png"
+        "png/turn.png"
     };
 
     private Image[] mapImages;
@@ -19,7 +19,6 @@ public class MapData {
     private int[][] maps;
     private int width;
     private int height;
-
 
     MapData(int x, int y){
         mapImages = new Image[2];
@@ -35,7 +34,6 @@ public class MapData {
         fillMap(MapData.TYPE_WALL);
         digMap(1, 3);
         setImageViews();
-        
     }
 
     public int getHeight(){
@@ -87,36 +85,29 @@ public class MapData {
         setMap(x, y, MapData.TYPE_SPACE);
         int[][] dl = {{0,1},{0,-1},{-1,0},{1,0}};
         int[] tmp;
-    // dlのシャッフル
-        for (int i=0; i<dl.length; i++) {   //dl.length = 4
-            int r = (int)(Math.random()*dl.length);  //range 0~3
+
+        for (int i=0; i<dl.length; i++) {
+            int r = (int)(Math.random()*dl.length);
             tmp = dl[i];
             dl[i] = dl[r];
             dl[r] = tmp;
         }
-
         for (int i=0; i<dl.length; i++){
-            int dx = dl[i][0];             //dx*2,dy*2 range -2~2
+            int dx = dl[i][0];
             int dy = dl[i][1];
             if (getMap(x+dx*2, y+dy*2) == MapData.TYPE_WALL){
                 setMap(x+dx, y+dy, MapData.TYPE_SPACE);
                 digMap(x+dx*2, y+dy*2);
-
-            }                             //一度止まるまで線を引く。その後先端から広がっていき根元まで処理が戻ってくる。 
+            }
         }
+        for (int i = 2; i<=5; i++) {
+        do {
+          int x_rnd = rand.nextInt(22)+1;
+          int y_rnd = rand.nextInt(16)+1;
+          if (getMap(x_rnd, y_rnd) == MapData.TYPE_SPACE){
+            mapImageViews[x_rnd,y_rnd] = mapImageFiles[i];
+          }
+        } while(getMap(x_rnd, y_rnd) == MapData.TYPE_WALL);
+      }
     }
-
-    //得点表示と制限時間表示とステージ数表示
-    Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
-
-    public void paintComponent(Graphics g) {
-		//super.paintComponent(g);
-		g.setColor(Color.black);
-		Font font = new Font(Font.SERIF, Font.BOLD, 10);
-		g.setFont(font);
-		g.drawString("score", 10, 10);
-        g.drawString("time", 10, 20);
-        g.drawString("stage", 10, 30);
-	}
 }
-// branch test

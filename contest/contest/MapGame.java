@@ -4,10 +4,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
-
 public class MapGame extends Application {
     Stage stage;
-    
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 	stage = primaryStage;
@@ -17,10 +16,8 @@ public class MapGame extends Application {
 	primaryStage.setScene(myScene);
     primaryStage.show();
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }
 }
-
-
