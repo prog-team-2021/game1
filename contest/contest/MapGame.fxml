@@ -19,7 +19,7 @@
 	<Button text="func3" prefWidth="100"/>
 	<Button text="func4" prefWidth="100"/>
       </children>
-      <Label fx:id="score" prefWidth="80" prefHeight="20" text = "SCORE" + scorecount>
+      <Label fx:id="score" prefWidth="80" prefHeight="20" text = "SCORE" >
       </Label>
       <Label fx:id="time" prefWidth="80" prefHeight="20" text = "TIME">
       </Label>
