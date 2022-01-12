@@ -23,6 +23,8 @@ public class MapGameController implements Initializable {
     public MoveChara chara;
     public GridPane mapGrid;
     public Label score;
+    public Label time;
+    public Label stage;
     public ImageView[] mapImageViews;
 
     @Override
