@@ -99,5 +99,17 @@ public class MapData {
             }                             //一度止まるまで線を引く。その後先端から広がっていき根元まで処理が戻ってくる。 
         }
     }
+
+    //得点表示と制限時間表示とステージ数表示
+    g.setColor(Color.BLACK);
+    g.fillRect(0, 0, width, 50);
+
+    g.setColor(Color.WHITE);
+    g.setFont(statusFont);
+
+    GraphicsUtil.drawCenteringString(g, "Score:");
+    GraphicsUtil.drawCenteringString(g, "Point:");
+    GraphicsUtil.drawCenteringString(g, "Stage:");
+
 }
 // branch test
