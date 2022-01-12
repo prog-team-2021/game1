@@ -3,9 +3,7 @@ import javafx.scene.image.ImageView;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
- 
-import com.nompor.gtk.GameView;
-import com.nompor.gtk.draw.GraphicsUtil;
+
 //a
 public class MapData {
     public static final int TYPE_SPACE = 0;
@@ -109,18 +107,13 @@ public class MapData {
     //得点表示と制限時間表示とステージ数表示
     Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
 
-    public void draw(Graphics g) {
-    GraphicsUtil.setTextAntialiasing(g, true);
-
-    g.setColor(Color.BLACK);
-    g.fillRect(0, 0, width, 50);
-
-    g.setColor(Color.WHITE);
-    g.setFont(statusFont);
-
-    GraphicsUtil.drawCenteringString(g, "Score:");
-    GraphicsUtil.drawCenteringString(g, "Point:");
-    GraphicsUtil.drawCenteringString(g, "Stage:");
-    }
-}
+    public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.setColor(Color.black);
+		Font font = new Font(Font.SERIF, Font.BOLD, 10);
+		g.setFont(font);
+		g.drawString("score", 10, 10);
+        g.drawString("time", 10, 20);
+        g.drawString("stage", 10, 30);
+	}
 // branch test
