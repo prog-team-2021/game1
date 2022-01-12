@@ -72,6 +72,7 @@ public class MapGameController implements Initializable {
 	    }
     }
     }
+    //
 
     // Get users key actions
     public void keyAction(KeyEvent event){
