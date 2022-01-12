@@ -58,7 +58,11 @@ public class MapGameController implements Initializable {
                 }
             }
         }
-        //得点表示と制限時間表示とステージ数表示
+
+    }
+    //
+    
+            //得点表示と制限時間表示とステージ数表示
         Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
 
         public void paintComponent(Graphics g) {
@@ -70,10 +74,7 @@ public class MapGameController implements Initializable {
         g.drawString("time", 10, 20);
         g.drawString("stage", 10, 30);
 	    }
-    }
-    }
-    //
-
+    
     // Get users key actions
     public void keyAction(KeyEvent event){
         KeyCode key = event.getCode(); System.out.println("keycode:"+key);
@@ -132,7 +133,7 @@ public class MapGameController implements Initializable {
     
     //制限時間
     public class Countdown {
-        public static void main(String[] args) {
+        public void main(String[] args) {
     
             final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     
