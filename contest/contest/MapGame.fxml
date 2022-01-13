@@ -35,6 +35,12 @@
                 <Label fx:id="STAGECOUNT" text="" />
               </children>
             </HBox>
+            <HBox>
+              <children>
+                <Label text="TIME:" />
+                <Label fx:id="TIMECOUNT" text="" />
+              </children>
+            </HBox>
           </children>
         </VBox>
             </children>

@@ -26,6 +26,27 @@ public class MapGameController implements Initializable {
     //status
     public Label SCORECOUNT;
     public Label STAGECOUNT;
+    public Label TIMECOUNT;
+
+    //status
+    private int ScoreNum=0;
+    private int StageNum=0;
+    private int TimeNum=60;
+    //
+
+    //getstatus
+    public int getScoreNum(){
+        return ScoreNum;
+    }
+
+    public int getStageNum(){
+        return StageNum;
+    }
+
+    public int getTimeNum(){
+        return TimeNum;
+    }
+    //
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -41,10 +62,11 @@ public class MapGameController implements Initializable {
         drawMap(chara, mapData);
     }
 
-    //ステータス
+    //ステータス表示
     public void setNumberLabel(){
-      SCORECOUNT.setText("" + chara.getScoreNum());
-      STAGECOUNT.setText("" + chara.getStageNum());
+      SCORECOUNT.setText("" + getScoreNum());
+      STAGECOUNT.setText("" + getStageNum());
+      TIMECOUNT.setText("" + getTimeNum() + "s");
   }
   //
 
