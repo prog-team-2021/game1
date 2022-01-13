@@ -5,11 +5,11 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.util.Random;
 
-//a//
 public class MapData {
     public static final int TYPE_SPACE = 0;
     public static final int TYPE_WALL = 1;
     public static final int TYPE_OTHERS = 2;
+    
     private static final String mapImageFiles[] = {
         "png/SPACE.png",
         "png/WALL.png",
@@ -26,9 +26,9 @@ public class MapData {
 
 
     MapData(int x, int y){
-        mapImages = new Image[2];
+        mapImages = new Image[5];
         mapImageViews = new ImageView[y][x];
-        for (int i=0; i<2; i++) {
+        for (int i=0; i<5; i++) {
             mapImages[i] = new Image(mapImageFiles[i]);
         }
 
@@ -108,17 +108,20 @@ public class MapData {
 
             }                             //一度止まるまで線を引く。その後先端から広がっていき根元まで処理が戻ってくる。 
         }
+        //アイテム画像との変換
         Random rnd = new Random();
         int x_rnd = rnd.nextInt(22)+1;
         int y_rnd = rnd.nextInt(16)+1;
         for(int i=2;i<=5;i++){
             do{
-        
+                if(getMap(x_rnd,y_rnd) == MapData.TYPE_SPACE){
+                    mapImageViews[y_rnd][x_rnd] = new ImageView(mapImages[maps[y_rnd][x_rnd]]);
+                }
             }while(getMap(x_rnd,y_rnd) == MapData.TYPE_WALL);
         }
         
     }
-    //アイテム画像との変換
+
     
     //得点表示と制限時間表示とステージ数表示
     Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
