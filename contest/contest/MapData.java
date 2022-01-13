@@ -24,7 +24,10 @@ public class MapData {
     private int width;
     private int height;
 
-
+    //status
+    private int ScoreNum=0;
+    private int StageNum=0;
+    //
     MapData(int x, int y){
         mapImages = new Image[5];
         mapImageViews = new ImageView[y][x];

@@ -2,6 +2,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+
 public class MoveChara {
     public static final int TYPE_DOWN  = 0;
     public static final int TYPE_LEFT  = 1;
@@ -15,6 +16,11 @@ public class MoveChara {
 
     private int posX;
     private int posY;
+
+    //status
+    private int ScoreNum=0;
+    private int StageNum=0;
+    //
 
     private MapData mapData;
 
@@ -93,6 +99,16 @@ public class MoveChara {
         return posY;
     }
 
+    //getstatus
+    public int getScoreNum(){
+        return ScoreNum;
+    }
+
+    public int getStageNum(){
+        return StageNum;
+    }
+    //
+
     // Draw the cat animation
     private class ImageAnimation extends AnimationTimer {
 
@@ -134,3 +150,4 @@ public class MoveChara {
         }
     }
 }
+

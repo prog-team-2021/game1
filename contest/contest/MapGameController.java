@@ -1,25 +1,31 @@
-import static java.util.concurrent.TimeUnit.SECONDS;
-
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.Group;
+import javafx.scene.layout.Pane;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.*;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.GridPane;
+import static java.util.concurrent.TimeUnit.SECONDS;
 //comment
 public class MapGameController implements Initializable {
     public MapData mapData;
     public MoveChara chara;
     public GridPane mapGrid;
     public ImageView[] mapImageViews;
+    //status
+    public Label SCORECOUNT;
+    public Label STAGECOUNT;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -36,9 +42,11 @@ public class MapGameController implements Initializable {
     }
 
     //ステータス
-    int score=0;
-    //int counttime=120;
-    int stage = 0;
+    public void setNumberLabel(){
+      SCORECOUNT.setText("" + chara.getScoreNum());
+      STAGECOUNT.setText("" + chara.getStageNum());
+  }
+  //
 
     // Draw the map
     public void drawMap(MoveChara c, MapData m){
@@ -55,30 +63,20 @@ public class MapGameController implements Initializable {
                 }
             }
         }
-
+        setNumberLabel();
     }
     //
-    
-            //得点表示と制限時間表示とステージ数表示
-        Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
 
-        public void paintComponent(Graphics g) {
-		//super.paintComponent(g);
-		g.setColor(Color.black);
-		Font font = new Font(Font.SERIF, Font.BOLD, 10);
-		g.setFont(font);
-		g.drawString("score", 10, 10);
-        g.drawString("time", 10, 20);
-        g.drawString("stage", 10, 30);
-	    }
-    
+
+
+
     // Get users key actions
     public void keyAction(KeyEvent event){
         KeyCode key = event.getCode(); System.out.println("keycode:"+key);
         if (key == KeyCode.A){
         	leftButtonAction();
         }else if (key == KeyCode.S){
-            downButtonAction(); 
+            downButtonAction();
         }else if (key == KeyCode.W){
             upButtonAction();
         }else if (key == KeyCode.D){
@@ -127,27 +125,6 @@ public class MapGameController implements Initializable {
         System.out.println("Action: " + actionString);
     }
 
-    
-    //制限時間
-    public class Countdown {
-        public void main(String[] args) {
-    
-            final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-    
-            final Runnable runnable = new Runnable() {
-    
-                public void run() {
-                    int counttime=120;
-                    counttime--;
-    
-                    if (counttime < 0) {
-                        System.out.println("Timer Over!");
-                        scheduler.shutdown();
-                    }
-                }
-            };
-            scheduler.scheduleAtFixedRate(runnable, 0, 1, SECONDS);
-        }
-    }
+
 
 }
