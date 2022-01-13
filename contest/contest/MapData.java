@@ -115,7 +115,7 @@ public class MapData {
         for(int i=2;i<=5;i++){
             do{
                 if(getMap(x_rnd,y_rnd) == MapData.TYPE_SPACE){
-                    mapImageViews[y_rnd][x_rnd] = new ImageView(mapImages[maps[y_rnd][x_rnd]]);
+                    mapImageViews[y_rnd][x_rnd] = new ImageView(mapImages[i]);
                 }
             }while(getMap(x_rnd,y_rnd) == MapData.TYPE_WALL);
         }
