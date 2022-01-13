@@ -3,6 +3,7 @@ import javafx.scene.image.ImageView;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.util.Random;
 
 //a//
 public class MapData {
@@ -11,7 +12,10 @@ public class MapData {
     public static final int TYPE_OTHERS = 2;
     private static final String mapImageFiles[] = {
         "png/SPACE.png",
-        "png/WALL.png"
+        "png/WALL.png",
+        "png/gate.png",
+        "png/switch.png",
+        "png/turn.png"
     };
 
     private Image[] mapImages;
@@ -104,8 +108,18 @@ public class MapData {
 
             }                             //一度止まるまで線を引く。その後先端から広がっていき根元まで処理が戻ってくる。 
         }
+        Random rnd = new Random();
+        int x_rnd = rnd.nextInt(22)+1;
+        int y_rnd = rnd.nextInt(16)+1;
+        for(int i=2;i<=5;i++){
+            do{
+        
+            }while(getMap(x_rnd,y_rnd) == MapData.TYPE_WALL);
+        }
+        
     }
-
+    //アイテム画像との変換
+    
     //得点表示と制限時間表示とステージ数表示
     Font statusFont = new Font(Font.MONOSPACED, Font.CENTER_BASELINE, 10);
 
