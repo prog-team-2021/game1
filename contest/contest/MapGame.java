@@ -4,6 +4,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
+
 public class MapGame extends Application {
     Stage stage;
     
@@ -22,4 +23,4 @@ public class MapGame extends Application {
     }
 }
 
-//統合テスト 開発→master
+
