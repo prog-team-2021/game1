@@ -19,31 +19,54 @@
         <Button text="func3" prefWidth="100"/>
         <Button text="func4" prefWidth="100"/>
       </children>
-      <children>
-        <VBox prefWidth="160">
-          <children>
-            <Label text="WhiteCat" />
-            <HBox>
-              <children>
-                <Label text="SCORE:" />
-                <Label fx:id="SCORECOUNT" text="" />
-              </children>
-            </HBox>
-            <HBox>
-              <children>
-                <Label text="STAGE:" />
-                <Label fx:id="STAGECOUNT" text="" />
-              </children>
-            </HBox>
-            <HBox>
-              <children>
-                <Label text="TIME:" />
-                <Label fx:id="TIMECOUNT" text="" />
-              </children>
-            </HBox>
-          </children>
-        </VBox>
-            </children>
+            <children>
+              <VBox prefWidth="160">
+                <children>
+                  <Label text="WhiteCat" />
+                  <HBox>
+                    <children>
+                      <Label text="SCORE:" />
+                      <Label fx:id="SCORECOUNT" text="" />
+                    </children>
+                  </HBox>
+                  <HBox>
+                    <children>
+                      <Label text="STAGE:" />
+                      <Label fx:id="STAGECOUNT" text="" />
+                    </children>
+                  </HBox>
+                  <HBox>
+                    <children>
+                      <Label text="TIME:" />
+                      <Label fx:id="TIMECOUNT" text="" />
+                    </children>
+                  </HBox>
+                </children>
+              </VBox>
+              <VBox prefWidth="160">
+                  <children>
+                      <Label text="ITEM LIST AND STATUS" />
+                      <HBox>
+                          <children>
+                              <Label text="ITEMDATA:" />
+                              <Label fx:id="ITEMDATA" text="" />
+                          </children>
+                      </HBox>
+                      <HBox>
+                          <children>
+                              <Label text="HP:" />
+                              <Label fx:id="CATHP" text="" />
+                          </children>
+                      </HBox>
+                      <HBox>
+                          <children>
+                              <Label text="DIZZY:" />
+                              <Label fx:id="DIZZY" text="" />
+                          </children>
+                      </HBox>
+                  </children>
+              </VBox>
+                  </children>
       </HBox>
       <GridPane fx:id="mapGrid" prefWidth="360" prefHeight="360" >
       </GridPane>
@@ -51,3 +74,4 @@
 
     </children>
   </VBox>
+
